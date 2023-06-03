@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Com;/0patible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/login.css" />
+</head>
+
+<body>
+
+    <div class="login">
+        <div class="welcome">
+            <div class="w_head"> Just A Normal Blog</div>
+            <div class="w_body">
+                <p class="tit">Welcome !</p>
+                <p class="sen">To Play CY's Blog</p>
+                <p class="int">I made this little blog for practice,I'll be more than glad to see my progress after
+                    a winner holiday</p>
+
+            </div>
+        </div>
+        <div class="reg">
+
+            <div class="lo">
+                <div class="l_head">Sign in</div>
+                <div class="l_body">
+                    <div class="in_1 si">
+                        <span>Email</span>
+                        <input type="text" class="sign_in_i1">
+                    </div>
+                    <div class="in_2">
+                        <input type="password" placeholder="Password" class="sign_in_p1">
+                    </div>
+                    <div class="acp"><input type="checkbox" name="if" id="1">Remember Me <a href="javascript:;">Forget
+                            Password</a>
+                    </div>
+                    <div class="btn">
+                        <button class="sign_in_btn">In Now</button>
+                    </div>
+                    <div class="create">
+                        Create A New Account? <a href="javascript:;" class="a1">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="lo_1">
+                <div class="l_head">Sign up</div>
+                <div class="l_body">
+                    <div class="in_1 sp">
+                        <span>Email</span>
+                        <input type="text" class="sign_up_i1">
+                    </div>
+                    <div class="in_2">
+                        <input type="password" placeholder="Password" class="sign_up_p1">
+                    </div>
+                    <div class=" acp"><input type="checkbox" name="if_1" id="2">Remember Me <a
+                            href="javascript:;">Forget
+                            Password</a>
+                    </div>
+                    <div class="btn">
+                        <button class="sign_up_btn">In Now</button>
+                    </div>
+                    <div class="create">
+                        Already Have An Account? <a href="javascript:;" class="a2">Sign in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //切换登录与注册的页面
+        const lo = document.querySelector('.lo')
+        const lo_1 = document.querySelector('.lo_1')
+        const a1 = document.querySelector('.a1')
+        const a2 = document.querySelector('.a2')
+        a1.addEventListener("click", () => {
+            lo.style.right = -100 + "px"
+            lo_1.style.right = 0 + "px"
+            lo.style.opacity = 0
+            lo_1.style.opacity = 1
+            lo.style.zIndex = 5
+            lo_1.style.zIndex = 9
+        })
+        a2.addEventListener("click", () => {
+            lo_1.style.right = -100 + "px"
+            lo.style.right = 0 + "px"
+            lo_1.style.opacity = 0
+            lo.style.opacity = 1
+            lo.style.zIndex = 9
+            lo_1.style.zIndex = 5
+        })
+
+        //点击账号表单触发文字上移效果
+        //登录账号表单
+        const si_1 = document.querySelector('.sign_in_i1')
+        //登录密码表单
+        const si_2 = document.querySelector('.sign_in_p1')
+        const si_s = document.querySelector('.si span')
+        si_1.addEventListener('focus', () => {
+            si_s.style.top = -10 + 'px'
+            si_s.style.opacity = 1
+        })
+        si_1.addEventListener("blur", () => {
+            si_s.style.top = 11 + 'px'
+            si_s.style.opacity = 0
+        })
+        //注册账号表单
+        const sp_1 = document.querySelector(".sign_up_i1")
+        //注册密码表单
+        const sp_2 = document.querySelector('.sign_up_p1')
+        const sp_s = document.querySelector('.sp span')
+        sp_1.addEventListener('focus', () => {
+            sp_s.style.top = -10 + 'px'
+            sp_s.style.opacity = 1
+        })
+        sp_1.addEventListener("blur", () => {
+            sp_s.style.top = 11 + 'px'
+            sp_s.style.opacity = 0
+        })
+
+        //检测是否已经注册账号，
+        //**本地存储，逻辑中断，弹窗
+        //如果本地没有数据，则建立一个空数组
+        function user(email, password) {
+            this.email = email,
+                this.password = password
+        }
+        let users = JSON.parse(localStorage.getItem('user')) || []
+        console.log(users instanceof Array)
+        //登录界面输入判断
+        //正则表达式
+        //账号 —— 六位数及以上
+        const reg = /^[0-9]{6,16}$/
+        //判断是否存在这个账号的组合
+        const btn_1 = document.querySelector('.sign_in_btn')
+        btn_1.addEventListener('click', (e) => {
+            e.preventDefault()
+            let email_1 = si_1.value
+            let password_1 = si_2.value
+            let flag = false
+            users.forEach(element => {
+                if (element.email == email_1 || element.password == password_1) {
+                    flag = true
+                }
+            })
+            //判断
+            if (!email_1 || !password_1) {
+                alert('The input box cannot be empty')
+                si_1.value = si_2.value = ''
+            }
+            else if (!reg.test(email_1) || !reg.test(password_1)) {
+                alert('Account length/Password length must be at least 6')
+                si_1.value = si_2.value = ''
+            }
+            else if (users.length == 0 || flag == false) {
+                alert('The user does not exist, please register first')
+                console.log('cy')
+                si_1.value = si_2.value = ''
+            } else {
+                alert('Welcome! ^.^')
+                location.href = './blog/main.html'
+
+            }
+        })
+        //注册账号并存储
+        const btn_2 = document.querySelector('.sign_up_btn')
+        btn_2.addEventListener('click', (e) => {
+            let email_2 = sp_1.value
+            let password_2 = sp_2.value
+            if (!email_2 || !password_2) {
+                alert('The input box cannot be empty')
+            } else if (!reg.test(email_2) || !reg.test(password_2)) {
+                alert('Account length/Password length must be at least 6')
+            } else {
+                //合法 存储
+                let obj = new user(email_2, password_2)
+                users.push(obj)
+                localStorage.setItem('user', JSON.stringify(users))
+                alert('Add Account Successfully!')
+                sp_1.value = sp_2.value = ''
+            }
+        })
+    </script>
+</body>
+
+</html>

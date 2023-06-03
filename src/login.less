@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?cladbc');
+    src: url('fonts/icomoon.eot?cladbc#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?cladbc') format('truetype'),
+        url('fonts/icomoon.woff?cladbc') format('woff'),
+        url('fonts/icomoon.svg?cladbc#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+body {
+    background-image: url(./image/bg.jpg);
+    background-size: cover;
+    padding: 100px;
+
+    .login {
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, .4);
+        margin: 0 auto;
+        width: 85%;
+        height: 500px;
+
+        display: flex;
+
+        .welcome {
+
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            height: 100%;
+            color: #fff;
+
+            .w_head {
+                padding: 30px;
+                font-size: 28px;
+                flex: 8;
+
+            }
+
+            .w_body {
+                flex: 9;
+                padding: 30px;
+
+                .tit,
+                .sen {
+                    transition: all .5s;
+                    font-weight: bold;
+                    font-size: 38px;
+                    margin: 0 !important;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #bebebe;
+                        transform: scale(1);
+                    }
+                }
+
+
+                &::after {
+                    letter-spacing: 5px;
+                    color: #fff;
+                    font-size: 20px;
+                    content: '\e90c  \e90d  \e90e  \e90f';
+                    font-family: 'icomoon';
+                }
+            }
+
+        }
+
+        .reg {
+            padding-right: 80px;
+            position: relative;
+            height: 100%;
+            flex: 1;
+
+
+
+            .lo,
+            .lo_1 {
+                width: 370px;
+                height: 100%;
+                padding-right: 80px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                flex-direction: column;
+                display: flex;
+
+                flex: 7;
+
+                .l_head {
+                    padding-top: 60px;
+                    text-align: center;
+                    font-size: 28px;
+                    color: #fff;
+
+                    flex: 2;
+                }
+
+                .l_body {
+                    flex: 9;
+                    padding: 10px 40px;
+
+                    .in_1,
+                    .in_2 {
+                        position: relative;
+                        height: 45px;
+                        border-bottom: 3px solid #fff;
+
+                        span {
+                            color: #fff;
+                            font-size: 19px;
+                            transition: all .4s;
+                            position: absolute;
+                            top: 11px;
+                            left: 0;
+                        }
+
+                        input {
+                            font-size: 18px;
+                            width: 100%;
+                            height: 100%;
+                            list-style: none;
+                            border: 0;
+                            outline: none;
+                            color: #fff;
+                            background-color: rgba(102, 102, 102, 0);
+                        }
+                    }
+
+                    .acp {
+                        color: #fff;
+                        margin-top: 10px;
+                        font-size: 14px;
+                        height: 45px;
+
+                        a {
+                            color: #fff;
+                            text-decoration: none;
+                            float: right;
+                        }
+
+                    }
+
+                    .btn {
+                        box-sizing: border-box;
+                        width: 100%;
+
+
+                        button {
+                            border-radius: 5px;
+                            font-size: 14px;
+                            color: #fff;
+                            border: 0;
+                            height: 35px;
+                            width: 100%;
+                            outline: none;
+                            background-color: #2a2d74;
+
+                            &:hover {
+                                background-color: #373a8b;
+                            }
+                        }
+                    }
+
+                    .create {
+                        font-size: 14px;
+                        color: #fff;
+                        line-height: 40px;
+                        width: 100%;
+                        height: 40px;
+                        text-align: center;
+
+                        a {
+                            color: #fff;
+                            text-decoration: none;
+
+                            &:hover {
+                                color: #ccc;
+
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .lo_1 {
+                opacity: 0;
+                z-index: 5;
+                transition: all .5s;
+                position: absolute;
+                top: 0;
+                right: -100px;
+            }
+
+            .lo {
+                transition: all .5s;
+                z-index: 9;
+            }
+        }
+
+    }
+}

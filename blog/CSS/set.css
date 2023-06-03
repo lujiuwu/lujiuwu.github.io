@@ -1,0 +1,116 @@
+.head a {
+    display: block;
+    margin-left: 20px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 19px;
+}
+
+.head a::after {
+    content: '\ea14';
+    font-family: 'icomoon';
+    margin-left: 10px;
+}
+
+.head a:hover {
+    color: rgb(124, 124, 124);
+}
+
+.setname {
+    margin-top: 40px;
+    width: 900px;
+    height: 50px;
+    padding-top: 100px;
+}
+
+.setname h2 {
+    font-size: 35px;
+    margin-left: 10px;
+    color: rgb(251, 251, 251);
+
+}
+
+.setarea {
+    margin-top: 20px;
+    width: 900px;
+    height: 600px;
+    background-color: rgb(255, 255, 255, .8);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.setarea_1,
+.setarea_2,
+.setarea_3 {
+    width: 880px;
+    height: 260px;
+    border-bottom: 2px solid rgb(187, 182, 182);
+    margin: 15px 5px;
+}
+
+.setarea h3 {
+    font-size: 26px;
+    margin-left: 20px;
+    color: rgb(86, 86, 86);
+}
+
+.setarea_1 ul li {
+    width: 500px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 120px;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.setarea_1 ul li select {
+    outline-style: none;
+    height: 36px;
+    width: 170px;
+    font-size: 22px;
+    text-indent: 22px;
+    color: rgb(77, 76, 76);
+    margin-top: 5px;
+}
+
+.lang {
+    margin-left: 40px;
+}
+
+.setarea_2 ul li {
+    font-size: 20px;
+    margin-left: 120px;
+    margin-top: 18px;
+    height: 35px;
+    line-height: 35px;
+    width: 650px;
+
+}
+
+.setarea_2 ul li div {
+    display: inline-block;
+    margin-left: 500px;
+    width: 90px;
+    height: 34px;
+    background-color: rgba(174, 174, 174, 0.2);
+    text-align: center;
+    font-size: 18px;
+    color: rgb(108, 107, 107);
+    border-radius: 15px;
+    border: 1px solid rgb(114, 114, 114);
+}
+
+.setarea_2 ul li a {
+    margin-left: 462px;
+    color: rgb(108, 107, 107);
+}
+
+.setarea_2 ul li a:hover {
+    color: rgb(60, 59, 59);
+}
+
+.setarea_3 ul li {
+    font-size: 20px;
+    margin-left: 120px;
+    margin-top: 10px;
+}

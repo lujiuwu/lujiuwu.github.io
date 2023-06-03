@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?pemlg1');
+    src: url('fonts/icomoon.eot?pemlg1#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?pemlg1') format('truetype'),
+        url('fonts/icomoon.woff?pemlg1') format('woff'),
+        url('fonts/icomoon.svg?pemlg1#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+::selection {
+    background-color: #797878;
+    color: #fff;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.mainbody {
+    background-image: url(../images/背景.jpg);
+    background-color: blue;
+    background-size: 100%;
+    width: 1510px;
+    height: 870px;
+}
+
+.head {
+    position: relative;
+    width: 1510px;
+    height: 35px;
+    background-color: #cccdcd;
+    margin-top: 0;
+}
